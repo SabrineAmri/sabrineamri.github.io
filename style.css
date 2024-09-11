@@ -93,10 +93,53 @@ footer {
     clear: both;
 }
 
-/* Styling for Profile Photo */
+/* Styling for Profile Photo and Overlay */
+.image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
 .profile-photo {
-    max-width: 200px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    display: block;
-    margin: 0 auto 20px;
+    background-image: url('photo.jpeg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Transparent overlay on top of the profile photo */
+.transparent-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.0); /* Transparent */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Hide right-click menu */
+.transparent-overlay {
+    pointer-events: none;
+}
+
+/* Make sure footer sticks to the bottom */
+html {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
 }

@@ -1,3 +1,11 @@
+// Disable right-click on all images
+document.addEventListener('contextmenu', function (e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+});
+
+// Language switcher functionality
 document.getElementById('language-select').addEventListener('change', function() {
     const selectedLanguage = this.value;
 
