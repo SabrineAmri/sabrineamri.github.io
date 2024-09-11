@@ -1,94 +1,102 @@
 /* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
+html, body {
+    height: 100%; /* Ensure the page takes full height */
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
 header {
     background-color: #333;
     color: white;
-    padding: 20px 0;
-    text-align: center;
+    padding: 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    font-size: 1.2em;
-    margin: 10px 0 20px;
-}
-
-nav ul {
-    list-style: none;
+.navbar ul {
+    list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
-nav ul li {
+.navbar ul li {
     display: inline;
-    margin: 0 10px;
+    margin-right: 15px;
 }
 
-nav ul li a {
+.navbar ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav ul li a:hover {
+.navbar ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main content styles */
-.content {
-    max-width: 900px;
-    margin: 20px auto;
+.language-switcher {
+    display: inline-block;
+    float: right;
+}
+
+/* Main Content */
+main {
+    flex-grow: 1; /* Ensures main content expands to fill available space */
+}
+
+.profile-section {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.profile-section h1, .profile-section h2 {
     color: #333;
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-h3 {
-    color: #666;
-    font-size: 1.5em;
-    margin-bottom: 15px;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: disc;
+    margin-left: 20px;
 }
 
-ul li {
+p {
     margin: 15px 0;
 }
 
-ul li a {
+a {
     color: #0066cc;
     text-decoration: none;
 }
 
-ul li a:hover {
+a:hover {
     text-decoration: underline;
 }
 
+/* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
     background-color: #333;
     color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
     position: relative;
     bottom: 0;
-    width: 100%;
+    clear: both;
+}
+
+/* Styling for Profile Photo */
+.profile-photo {
+    max-width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
 }
