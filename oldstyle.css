@@ -1,0 +1,36 @@
+/* General Section Styling */
+h3 {
+    color: #333;
+    margin-top: 30px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 15px 0;
+}
+
+ul li a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Style for Journals Section */
+#publications h3:first-of-type {
+    color: #2c3e50;
+}
+
+/* Style for Conferences Section */
+#publications h3:nth-of-type(2) {
+    color: #8e44ad;
+}
