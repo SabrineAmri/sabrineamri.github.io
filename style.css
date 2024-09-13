@@ -143,3 +143,67 @@ body {
 main {
     flex-grow: 1;
 }
+
+/* Table Styling for Co-supervision */
+.co-supervision-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.co-supervision-table th, .co-supervision-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.co-supervision-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.co-supervision-table tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+.co-supervision-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.co-supervision-table td {
+    vertical-align: middle;
+}
+
+/* Style for responsiveness */
+@media (max-width: 768px) {
+    .co-supervision-table thead {
+        display: none;
+    }
+
+    .co-supervision-table, .co-supervision-table tbody, .co-supervision-table tr, .co-supervision-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .co-supervision-table tr {
+        margin-bottom: 15px;
+    }
+
+    .co-supervision-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .co-supervision-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+/* Table Styling for Co-supervision */
