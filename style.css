@@ -1,137 +1,160 @@
 /* General Styles */
+
+/* Set full height for the HTML and body elements, and reset margin and padding */
 html, body {
     height: 100%; /* Ensure the page takes full height */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light grey background for the entire page */
+    font-family: 'Arial', sans-serif; /* Set the default font for the page */
 }
 
+/* The body will use flexbox to structure the page in a column layout */
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Align the header, main content, and footer vertically */
 }
 
-/* Header */
+/* Header Styles */
+
+/* Style the header with a dark background and white text */
 header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    background-color: #333; /* Dark grey background */
+    color: white; /* White text color */
+    padding: 20px; /* Add space inside the header */
 }
 
+/* Navigation bar list styles */
 .navbar ul {
-    list-style-type: none;
+    list-style-type: none; /* Remove default bullet points from the list */
     padding: 0;
     margin: 0;
 }
 
+/* Ensure list items are displayed in a row (inline) */
 .navbar ul li {
     display: inline;
-    margin-right: 15px;
+    margin-right: 15px; /* Add space between navigation items */
 }
 
+/* Style for navigation links */
 .navbar ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    color: white; /* Set link text color to white */
+    text-decoration: none; /* Remove underline from the links */
+    font-weight: bold; /* Make the links bold */
 }
 
+/* Add underline on hover for better interaction feedback */
 .navbar ul li a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline the links when hovered */
 }
 
+/* Style for the language switcher (dropdown) to align it to the right */
 .language-switcher {
-    display: inline-block;
-    float: right;
+    display: inline-block; /* Ensure it aligns with the inline navigation */
+    float: right; /* Push the language switcher to the right */
 }
 
-/* Main Content */
+/* Main Content Styling */
+
+/* The main content area should grow to fill available space in the layout */
 main {
-    flex-grow: 1; /* Ensures main content expands to fill available space */
+    flex-grow: 1; /* Allow the main content to expand */
 }
 
+/* Style for the profile section (main container for content) */
 .profile-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Limit the width of the content to 800px */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 20px; /* Add padding inside the content container */
+    background-color: white; /* Set background to white */
+    border-radius: 8px; /* Round the corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a 3D effect */
 }
 
+/* Style for headings inside the profile section */
 .profile-section h1, .profile-section h2 {
-    color: #333;
+    color: #333; /* Dark grey color for headings */
 }
 
+/* Ensure that unordered lists (ul) have bullet points */
 ul {
-    list-style-type: disc;
-    margin-left: 20px;
+    list-style-type: disc; /* Bullet points for unordered lists */
+    margin-left: 20px; /* Add left margin for indentation */
 }
 
+/* Paragraph spacing */
 p {
-    margin: 15px 0;
+    margin: 15px 0; /* Add vertical space around paragraphs */
 }
 
+/* Link styles inside the main content */
 a {
-    color: #0066cc;
-    text-decoration: none;
+    color: #0066cc; /* Blue color for links */
+    text-decoration: none; /* Remove underline for links */
 }
 
+/* Add underline to links on hover */
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline the links when hovered */
 }
 
-/* Footer */
+/* Footer Styles */
+
+/* Style the footer with the same dark background and white text as the header */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    clear: both;
+    background-color: #333; /* Dark grey background */
+    color: white; /* White text color */
+    text-align: center; /* Center the text in the footer */
+    padding: 20px; /* Add space inside the footer */
+    width: 100%; /* Make the footer stretch the full width of the page */
+    position: relative; /* Position footer at the bottom of the content */
+    bottom: 0; /* Stick footer to the bottom */
+    clear: both; /* Clear any floats */
 }
 
-/* Styling for Profile Photo and Overlay */
+/* Profile Photo Styling */
+
+/* Container for the profile photo, ensures size and positioning */
 .image-container {
     position: relative;
     width: 200px;
     height: 200px;
-    margin: 0 auto;
+    margin: 0 auto; /* Center the photo horizontally */
 }
 
+/* Styling the profile photo itself as a circle */
 .profile-photo {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    background-image: url('photo.jpeg'); /* Path to your image */
-    background-size: cover;
-    background-position: center;
+    border-radius: 50%; /* Make the image a circle */
+    background-image: url('photo.jpeg'); /* Background image for the profile */
+    background-size: cover; /* Ensure the image covers the entire circle */
+    background-position: center; /* Center the image inside the circle */
 }
 
-/* Transparent overlay on top of the profile photo */
+/* Transparent overlay over the profile photo */
 .transparent-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.0); /* Transparent */
-    border-radius: 50%;
-    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.0); /* Fully transparent overlay */
+    border-radius: 50%; /* Same round shape as the profile photo */
+    z-index: 1; /* Place the overlay on top */
 }
 
-/* Hide right-click menu */
+/* Disable right-click context menu on the profile photo */
 .transparent-overlay {
-    pointer-events: none;
+    pointer-events: none; /* Prevent interactions like right-clicking */
 }
 
-/* Make sure footer sticks to the bottom */
+/* Ensure the footer stays at the bottom of the page */
 html {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100%; /* Ensure the page takes full height */
 }
 
 body {
@@ -145,96 +168,74 @@ main {
 }
 
 /* Table Styling for Co-supervision */
+
+/* Style the table in the Co-supervision section */
 .co-supervision-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 16px;
-    text-align: left;
+    width: 100%; /* Make the table take up the full width */
+    border-collapse: collapse; /* Remove space between cells */
+    margin: 20px 0; /* Add vertical margin around the table */
+    font-size: 16px; /* Set font size for the table */
+    text-align: left; /* Left-align the table text */
 }
 
+/* Style for table header and data cells */
 .co-supervision-table th, .co-supervision-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
+    padding: 12px 15px; /* Add padding inside cells */
+    border-bottom: 1px solid #ddd; /* Add a border between rows */
+    word-wrap: break-word; /* Break long words in cells to prevent overflow */
 }
 
+/* Style for the table header */
 .co-supervision-table th {
-    background-color: #f8f8f8;
-    font-weight: bold;
+    background-color: #f8f8f8; /* Light grey background for the header */
+    font-weight: bold; /* Make the header text bold */
 }
 
+/* Alternate row coloring for better readability */
 .co-supervision-table tr:nth-of-type(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Light grey background for even rows */
 }
 
+/* Add hover effect on rows */
 .co-supervision-table tr:hover {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* Change background color on hover */
 }
 
+/* Ensure table cells vertically align their content */
 .co-supervision-table td {
-    vertical-align: middle;
+    vertical-align: middle; /* Align content in the middle of the cell */
+    white-space: normal; /* Ensure long text wraps to the next line */
 }
 
-/* Table Styling for Co-supervision */
-.co-supervision-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 16px;
-    text-align: left;
-}
-
-.co-supervision-table th, .co-supervision-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-.co-supervision-table th {
-    background-color: #f8f8f8;
-    font-weight: bold;
-}
-
-.co-supervision-table tr:nth-of-type(even) {
-    background-color: #f9f9f9;
-}
-
-.co-supervision-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-.co-supervision-table td {
-    vertical-align: middle;
-}
-
-/* Style for responsiveness */
+/* Mobile-specific styling for responsive tables */
 @media (max-width: 768px) {
     .co-supervision-table thead {
-        display: none;
+        display: none; /* Hide table header on mobile */
     }
 
     .co-supervision-table, .co-supervision-table tbody, .co-supervision-table tr, .co-supervision-table td {
-        display: block;
-        width: 100%;
+        display: block; /* Make rows and cells behave as block elements */
+        width: 100%; /* Ensure the table stretches the full width */
     }
 
     .co-supervision-table tr {
-        margin-bottom: 15px;
-        border-bottom: 1px solid #ddd;
+        margin-bottom: 15px; /* Add space between rows */
     }
 
     .co-supervision-table td {
-        text-align: left; /* Adjusted to keep left alignment for better readability */
-        padding-left: 50%; /* Ensure there's enough space for the data label */
-        position: relative;
+        text-align: right; /* Right-align text inside cells */
+        padding-left: 50%; /* Add padding to the left */
+        position: relative; /* Required for the pseudo-element */
+        word-wrap: break-word; /* Ensure long words break into multiple lines */
     }
 
     .co-supervision-table td::before {
-        content: attr(data-label); /* Use the data-label attribute to display the column title */
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-weight: bold;
-        text-align: left;
+        content: attr(data-label); /* Show the label for each cell on mobile */
+        position: absolute; /* Position the label text */
+        left: 0; /* Align it to the left */
+        width: 50%; /* Make it take up 50% of the space */
+        padding-left: 15px; /* Add padding for spacing */
+        font-weight: bold; /* Make the label bold */
+        text-align: left; /* Align the label text to the left */
     }
 }
