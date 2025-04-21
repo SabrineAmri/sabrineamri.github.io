@@ -1,84 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabrine Amri - Profile</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Sabrine Amri - AI & Cybersecurity Researcher</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html" id="nav-profile" class="nav-link">Profile</a></li>
-                <li><a href="research.html" id="nav-research" class="nav-link">Research</a></li>
-                <li><a href="publications.html" id="nav-publications" class="nav-link">Publications</a></li>
-                <li><a href="teaching.html" id="nav-teaching" class="nav-link">Teaching</a></li>
-                <li><a href="co_supervision.html" id="nav-co-supervision" class="nav-link">Co-supervised Students</a></li>
-            </ul>
-            <div class="language-switcher">
-                <select id="language-select">
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                </select>
-            </div>
-        </nav>
-    </header>
+  <nav>
+    <ul class="navbar">
+      <li><a href="index.html" id="nav-profile">Profile</a></li>
+      <li><a href="research.html" id="nav-research">Research</a></li>
+      <li><a href="publications.html" id="nav-publications">Publications</a></li>
+      <li><a href="teaching.html" id="nav-teaching">Teaching</a></li>
+      <li><a href="co_supervision.html" id="nav-co-supervision">Co-supervised Students</a></li>
+    </ul>
+    <select id="language-select" class="language-switcher">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+  </nav>
 
-    <main>
-        <!-- Content in English by default -->        
-        <section class="profile-section" id="content-en">
-            <div class="image-container">
-                <div class="profile-photo"></div>
-                <div class="transparent-overlay"></div>
-            </div>
-            <h1>Profile: Dr. Sabrine Amri</h1>
-            <p>PhD in Computer Science specializing in artificial intelligence and data analysis techniques, with experience in natural language processing, machine learning, explainable AI, and multimodal data analysis.</p>
-            <p><a href="cv_en.pdf" download>Download Full CV</a></p> <!-- English CV Link -->
-        
-            <!-- Social Media Links Section -->
-            <div class="social-links">
-                <h3>Find me on</h3>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/sabrine-amri-b7a373a9/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                    <li><a href="https://www.researchgate.net/profile/Sabrine-Amri" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a></li>
-                    <li><a href="https://scholar.google.com/citations?user=qz7Dk8sAAAAJ&hl=en&oi=ao" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
-                    <li><a href="mailto:sabrine.amri@umontreal.ca"><i class="fas fa-envelope"></i> Email</a></li> 
-                </ul>
-            </div>
+  <header class="hero">
+    <div class="profile-photo"></div>
 
-        </section>
+    <div class="content-section active" id="content-en">
+      <h1>Dr. Sabrine Amri</h1>
+      <p>
+        Ph.D. in Computer Science from the <strong>Université de Montréal</strong> with distinction
+        (<em>mention excellent</em>). Specialized in Artificial Intelligence (AI) and Cybersecurity. 
+        My expertise includes Natural Language Processing (NLP), Machine Learning (ML), Explainable AI (XAI), Multimodal Data Analysis, and Large Language Models (LLMs).
+      </p>
+      <a href="cv_en.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-download"></i> Download My CV
+      </a>
+    </div>
 
-        <!-- Content in French, hidden by default -->
-        <section class="profile-section" id="content-fr" style="display: none;">
-            <div class="image-container">
-                <div class="profile-photo"></div>
-                <div class="transparent-overlay"></div>
-            </div>
-            <h1>Profil: Dr. Sabrine Amri</h1>
-            <p>Doctorat en informatique, spécialisé en intelligence artificielle et techniques d’analyse de données, avec expérience en traitement automatique du langage naturel, apprentissage automatique, intelligence artificielle explicable et analyse de données multimodales.</p>
-            <p><a href="cv_fr.pdf" download>Télécharger le CV complet</a></p> <!-- French CV Link -->
-            
-            <!-- Social Media Links Section -->
-            <div class="social-links">
-                <h3>Trouvez-moi sur</h3>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/sabrine-amri-b7a373a9/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                    <li><a href="https://www.researchgate.net/profile/Sabrine-Amri" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a></li>
-                    <li><a href="https://scholar.google.com/citations?user=qz7Dk8sAAAAJ&hl=en&oi=ao" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
-                    <li><a href="mailto:sabrine.amri@umontreal.ca"><i class="fas fa-envelope"></i> Email</a></li> 
-                </ul>
-            </div>
+    <div class="content-section" id="content-fr">
+      <h1>Dr. Sabrine Amri</h1>
+      <p>
+        Doctorat en informatique de l'<strong>Université de Montréal</strong> avec la mention <em>excellent</em>,
+        spécialisée en intelligence artificielle (IA) et cybersécurité. Mon expertise couvre le traitement automatique du langage naturel (NLP), 
+        l'apprentissage automatique (ML), l'IA explicable (XAI), l'analyse de données multimodales et les grands modèles de langage (LLMs).
+      </p>
+      <a href="cv_fr.pdf" class="cv-button" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-download"></i> Télécharger mon CV
+      </a>  
+    </div>
 
-        </section>
+    <div class="social-links">
+      <ul>
+        <li><a href="https://www.linkedin.com/in/sabrine-amri-b7a373a9/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://www.researchgate.net/profile/Sabrine-Amri" target="_blank"><i class="fab fa-researchgate"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?user=qz7Dk8sAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a></li>
+        <li><a href="mailto:sabrine.amri@umontreal.ca"><i class="fas fa-envelope"></i></a></li>
+      </ul>
+    </div>
+  </header>
 
-    </main>
+  <footer>
+    &copy; 2024 Sabrine Amri. All rights reserved.
+  </footer>
 
-    <footer>
-        <p>&copy; 2024 Sabrine Amri</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

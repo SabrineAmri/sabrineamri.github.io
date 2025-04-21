@@ -1,86 +1,108 @@
+console.log("script.js loaded");
+
 // Disable right-click on all images
 document.addEventListener('contextmenu', function (e) {
     if (e.target.tagName === 'IMG') {
-        e.preventDefault();
+      e.preventDefault();
     }
-});
-
-// Language switcher functionality
-document.getElementById('language-select').addEventListener('change', function() {
+  });
+  
+  // Language switcher functionality
+  document.getElementById('language-select').addEventListener('change', function () {
     const selectedLanguage = this.value;
-
-    // Hide both language sections for page content
+  
+    // Hide both language sections
     document.getElementById('content-en').style.display = 'none';
     document.getElementById('content-fr').style.display = 'none';
-
-    // Switch page content based on selected language
+  
+    // Show the selected one
     if (selectedLanguage === 'fr') {
-        document.getElementById('content-fr').style.display = 'block';
-
-        // Update navigation links to French
-        document.getElementById('nav-profile').textContent = 'Profil';
-        document.getElementById('nav-research').textContent = 'Recherche';
-        document.getElementById('nav-publications').textContent = 'Publications';
-        document.getElementById('nav-teaching').textContent = 'Enseignement';
-        document.getElementById('nav-co-supervision').textContent = 'Étudiants co-encadrés'; // Translation added
-
-        // Optionally change URLs to French if needed
-        // e.g., update URLs if you have different language versions of the pages
+      document.getElementById('content-fr').style.display = 'block';
+  
+      document.getElementById('nav-profile').textContent = 'Profil';
+      document.getElementById('nav-research').textContent = 'Recherche';
+      document.getElementById('nav-publications').textContent = 'Publications';
+      document.getElementById('nav-teaching').textContent = 'Enseignement';
+      document.getElementById('nav-co-supervision').textContent = 'Étudiants co-encadrés';
+  
     } else {
-        document.getElementById('content-en').style.display = 'block';
-
-        // Update navigation links to English
-        document.getElementById('nav-profile').textContent = 'Profile';
-        document.getElementById('nav-research').textContent = 'Research';
-        document.getElementById('nav-publications').textContent = 'Publications';
-        document.getElementById('nav-teaching').textContent = 'Teaching';
-        document.getElementById('nav-co-supervision').textContent = 'Co-supervised Students'; // English version
+      document.getElementById('content-en').style.display = 'block';
+  
+      document.getElementById('nav-profile').textContent = 'Profile';
+      document.getElementById('nav-research').textContent = 'Research';
+      document.getElementById('nav-publications').textContent = 'Publications';
+      document.getElementById('nav-teaching').textContent = 'Teaching';
+      document.getElementById('nav-co-supervision').textContent = 'Co-supervised Students';
     }
-
-    // Save the selected language to localStorage
+  
+    // Save language
     localStorage.setItem('preferredLanguage', selectedLanguage);
-});
-
-// Function to switch content based on selected language
-function switchLanguage(language) {
+    initializeCollapsibles(); // re-initialize
+  });
+  
+  // Set language on load
+  function switchLanguage(language) {
     if (language === 'fr') {
-        document.getElementById('content-en').style.display = 'none';
-        document.getElementById('content-fr').style.display = 'block';
-        
-        // Update navigation links to French
-        document.getElementById('nav-profile').textContent = 'Profil';
-        document.getElementById('nav-research').textContent = 'Recherche';
-        document.getElementById('nav-publications').textContent = 'Publications';
-        document.getElementById('nav-teaching').textContent = 'Enseignement';
-        document.getElementById('nav-co-supervision').textContent = 'Étudiants co-encadrés'; // Translation added
-        
+      document.getElementById('content-en').style.display = 'none';
+      document.getElementById('content-fr').style.display = 'block';
+      document.getElementById('nav-profile').textContent = 'Profil';
+      document.getElementById('nav-research').textContent = 'Recherche';
+      document.getElementById('nav-publications').textContent = 'Publications';
+      document.getElementById('nav-teaching').textContent = 'Enseignement';
+      document.getElementById('nav-co-supervision').textContent = 'Étudiants co-encadrés';
     } else {
-        document.getElementById('content-en').style.display = 'block';
-        document.getElementById('content-fr').style.display = 'none';
-
-        // Update navigation links to English
-        document.getElementById('nav-profile').textContent = 'Profile';
-        document.getElementById('nav-research').textContent = 'Research';
-        document.getElementById('nav-publications').textContent = 'Publications';
-        document.getElementById('nav-teaching').textContent = 'Teaching';
-        document.getElementById('nav-co-supervision').textContent = 'Co-supervised Students'; // English version
+      document.getElementById('content-en').style.display = 'block';
+      document.getElementById('content-fr').style.display = 'none';
+      document.getElementById('nav-profile').textContent = 'Profile';
+      document.getElementById('nav-research').textContent = 'Research';
+      document.getElementById('nav-publications').textContent = 'Publications';
+      document.getElementById('nav-teaching').textContent = 'Teaching';
+      document.getElementById('nav-co-supervision').textContent = 'Co-supervised Students';
     }
-}
+  }
+  
+  // Initial language load
+  function loadPreferredLanguage() {
+    const lang = localStorage.getItem('preferredLanguage') || 'en';
+    document.getElementById('language-select').value = lang;    
+    switchLanguage(lang);
+    //initializeCollapsibles(); // initialize after correct section is shown
+  }
+  
+  // 🔄 Correct handling for collapsibles (open/close properly)
+  
+  function initializeCollapsibles() {
+    document.querySelectorAll('.collapsible').forEach(btn => {
+      const content = btn.nextElementSibling;
+  
+      // Reset state
+      content.style.maxHeight = null;
+      content.style.padding = "0 20px";
+      btn.classList.remove('active');
+  
+      // Éviter les doublons
+      btn.onclick = () => {
+        const isOpen = btn.classList.contains('active');
+  
+        if (isOpen) {
+          // Fermer celui cliqué
+          btn.classList.remove('active');
+          content.style.maxHeight = null;
+          content.style.padding = "0 20px";
+        } else {
+          // Ouvrir celui cliqué
+          btn.classList.add('active');
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.style.padding = "15px 20px";
+        }
+      };
+    });
+  }
+  
 
-// Function to load the preferred language from localStorage
-function loadPreferredLanguage() {
-    // Check if a language is stored in localStorage
-    const storedLanguage = localStorage.getItem('preferredLanguage');
-    
-    // If there's a stored language, apply it; otherwise, default to English
-    const preferredLanguage = storedLanguage ? storedLanguage : 'en';
-    
-    // Set the language in the dropdown
-    document.getElementById('language-select').value = preferredLanguage;
-    
-    // Switch to the preferred language
-    switchLanguage(preferredLanguage);
-}
-
-// Load the preferred language when the page loads
-window.onload = loadPreferredLanguage;
+  //window.onload = loadPreferredLanguage;
+  window.onload = function () {
+    loadPreferredLanguage();
+    initializeCollapsibles(); // <== ici !
+  };
+  

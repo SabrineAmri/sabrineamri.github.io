@@ -1,115 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabrine Amri - Co-supervised Students</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Co-supervised Students - Dr. Sabrine Amri</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html" id="nav-profile" class="nav-link">Profile</a></li>
-                <li><a href="research.html" id="nav-research" class="nav-link">Research</a></li>
-                <li><a href="publications.html" id="nav-publications" class="nav-link">Publications</a></li>
-                <li><a href="teaching.html" id="nav-teaching" class="nav-link">Teaching</a></li>
-                <li><a href="co_supervision.html" id="nav-co-supervision" class="nav-link">Co-supervised Students</a></li>
-            </ul>
-            <div class="language-switcher">
-                <select id="language-select">
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                </select>
-            </div>
-        </nav>
-    </header>
+  <nav>
+    <ul class="navbar">
+      <li><a href="index.html" id="nav-profile">Profile</a></li>
+      <li><a href="research.html" id="nav-research">Research</a></li>
+      <li><a href="publications.html" id="nav-publications">Publications</a></li>
+      <li><a href="teaching.html" id="nav-teaching">Teaching</a></li>
+      <li><a href="co_supervision.html" id="nav-co-supervision">Co-supervised Students</a></li>
+    </ul>
+    <select id="language-select" class="language-switcher">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+  </nav>
 
-    <main>
-        <!-- English content -->
-        <section class="profile-section" id="content-en">
-            <h1>Co-supervised Students</h1>
-            <p>Here are some of the students I had the opportunity to co-supervise during my PhD at the University of Montreal.</p>
+  <main class="hero">
+    <!-- English Section -->
+    <section class="content-section active" id="content-en">
+      <h1>Co-supervised Students</h1>
+      <div class="table-wrapper">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Grade</th>
+              <th>Name</th>
+              <th>University</th>
+              <th>Date</th>
+              <th>Project Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MSc</td>
+              <td>Dorsaf Sallemi</td>
+              <td>Université de Montréal</td>
+              <td>Summer and Fall 2021</td>
+              <td>Fake news detection using explainable multimodal data analysis.</td>
+            </tr>
+            <tr>
+              <td>MSc</td>
+              <td>Henri-Cedric Mputu Boleilanga</td>
+              <td>Université de Montréal</td>
+              <td>2021–2022</td>
+              <td>Fake news detection using NLP tasks and web scraping techniques.</td>
+            </tr>
+            <tr>
+              <td>Bachelor</td>
+              <td>Armel Ivan Bado</td>
+              <td>Université de Montréal</td>
+              <td>2021–2022</td>
+              <td>Detection based on fact-checkers and trusted source analysis.</td>
+            </tr>
+            <tr>
+              <td>Bachelor</td>
+              <td>Raphael Blanchard</td>
+              <td>Université de Montréal</td>
+              <td>Winter 2023</td>
+              <td>Exploiting user profile features for credibility assessment in fake news detection.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-            <table class="co-supervision-table">
-                <tr>
-                    <th>Grade</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Project Description</th>
-                </tr>
-                <!-- Add students here -->
-                <tr>
-                    <td data-label="Grade">MSc</td>
-                    <td data-label="Name">Dorsaf Sallemi</td>
-                    <td data-label="Date">Summer and Fall 2021</td>
-                    <td data-label="Project Description">Project on fake news detection using explainable multimodal data analysis.</td>
-                </tr>
-                <tr>
-                    <td data-label="Grade">MSc</td>
-                    <td data-label="Name">Henri-Cedric Mputu Boleilanga</td>
-                    <td data-label="Date">2021-2022</td>
-                    <td data-label="Project Description">Project on fake news detection using NLP tasks and web scraping techniques.</td>
-                </tr>
-                <tr>
-                    <td data-label="Grade">Bachelor</td>
-                    <td data-label="Name">Armel Ivan Bado</td>
-                    <td data-label="Date">2021-2022</td>
-                    <td data-label="Project Description">Project on fake news detection based on fact-checkers and trusted sources analysis.</td>
-                </tr>
-                <tr>
-                    <td data-label="Grade">Bachelor</td>
-                    <td data-label="Name">Raphael Blanchard</td>
-                    <td data-label="Date">Winter 2023</td>
-                    <td data-label="Project Description">Project on Exploiting online user profile features for user credibility assessment in fake news detection.</td>
-                </tr>
-            </table>
-        </section>
+    <!-- French Section -->
+    <section class="content-section" id="content-fr">
+      <h1>Étudiants Co-encadrés</h1>
+      <div class="table-wrapper">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Niveau</th>
+              <th>Nom</th>
+              <th>Université</th>
+              <th>Date</th>
+              <th>Description du Projet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MSc</td>
+              <td>Dorsaf Sallemi</td>
+              <td>Université de Montréal</td>
+              <td>Été et Automne 2021</td>
+              <td>Détection de fausses nouvelles via l’analyse multimodale explicable.</td>
+            </tr>
+            <tr>
+              <td>MSc</td>
+              <td>Henri-Cedric Mputu Boleilanga</td>
+              <td>Université de Montréal</td>
+              <td>2021–2022</td>
+              <td>Détection avec tâches NLP et techniques de web scraping.</td>
+            </tr>
+            <tr>
+              <td>Baccalauréat</td>
+              <td>Armel Ivan Bado</td>
+              <td>Université de Montréal</td>
+              <td>2021–2022</td>
+              <td>Détection via vérificateurs de faits et sources fiables.</td>
+            </tr>
+            <tr>
+              <td>Baccalauréat</td>
+              <td>Raphael Blanchard</td>
+              <td>Université de Montréal</td>
+              <td>Hiver 2023</td>
+              <td>Exploitation de profils utilisateurs pour l’évaluation de la crédibilité dans la détection des fausses nouvelles.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
-        <!-- French content, hidden by default -->
-        <section class="profile-section" id="content-fr" style="display: none;">
-            <h1>Étudiants Co-encadrés</h1>
-            <p>Voici quelques étudiants que j'ai eu l'opportunité de co-encadrer pendant mon doctorat à l'Université de Montréal.</p>
+  <footer>
+    &copy; 2024 Sabrine Amri. All rights reserved.
+  </footer>
 
-            <table class="co-supervision-table">
-                <tr>
-                    <th>Niveau</th>
-                    <th>Nom</th>
-                    <th>Date</th>
-                    <th>Description du Projet</th>
-                </tr>
-                <tr>
-                    <td data-label="Niveau">MSc</td>
-                    <td data-label="Nom">Dorsaf Sallemi</td>
-                    <td data-label="Date">Été et Automne 2021</td>
-                    <td data-label="Description du Projet">Projet de détection des fausses nouvelles utilisant une analyse de données multimodales et explicables.</td>
-                </tr>
-                <tr>
-                    <td data-label="Niveau">MSc</td>
-                    <td data-label="Nom">Henri-Cedric Mputu Boleilanga</td>
-                    <td data-label="Date">2021-2022</td>
-                    <td data-label="Description du Projet">Projet de détection des fausses nouvelles utilisant des tâches NLP et des techniques de web scraping.</td>
-                </tr>
-                <tr>
-                    <td data-label="Niveau">Baccalauréat</td>
-                    <td data-label="Nom">Armel Ivan Bado</td>
-                    <td data-label="Date">2021-2022</td>
-                    <td data-label="Description du Projet">Projet de détection des fausses nouvelles basé sur l'analyse des sources fiables et les vérificateurs de faits.</td>
-                </tr>
-                <tr>
-                    <td data-label="Niveau">Baccalauréat</td>
-                    <td data-label="Nom">Raphael Blanchard</td>
-                    <td data-label="Date">Hiver 2023</td>
-                    <td data-label="Description du Projet">Projet d'exploitation des caractéristiques des profils utilisateurs pour l'évaluation de la crédibilité dans la détection des fausses nouvelles.</td>
-                </tr>                
-            </table>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Sabrine Amri</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

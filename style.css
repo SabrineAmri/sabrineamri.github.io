@@ -1,210 +1,248 @@
-/* General Styles */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    font-family: 'Arial', sans-serif;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header */
-header {
-    background-color: #333;
+    font-family: 'Inter', sans-serif;
+    background-color: #2d2d2d;
     color: white;
-    padding: 20px;
-}
-
-.navbar ul {
-    list-style-type: none;
-    padding: 0;
     margin: 0;
-}
-
-.navbar ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-.navbar ul li a {
+    padding: 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: #1e1e1e;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+  }
+  
+  .navbar {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-}
-
-.navbar ul li a:hover {
-    text-decoration: underline;
-}
-
-.language-switcher {
-    display: inline-block;
-    float: right;
-}
-
-/* Main Content */
-main {
-    flex-grow: 1; /* Ensures main content expands to fill available space */
-}
-
-.profile-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar li a:hover {
+    color: #d63384;
+  }
+  
+  .language-switcher {
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.profile-section h1, .profile-section h2 {
     color: #333;
-}
-
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-p {
-    margin: 15px 0;
-}
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  .hero {
     text-align: center;
-    padding: 20px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    clear: both;
-}
-
-/* Styling for Profile Photo and Overlay */
-.image-container {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-}
-
-.profile-photo {
-    width: 100%;
-    height: 100%;
+    padding: 50px 20px 30px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+  
+  .profile-photo {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    background-image: url('photo.jpeg'); /* Path to your image */
+    background-image: url('photo.jpeg');
     background-size: cover;
     background-position: center;
-}
-
-/* Transparent overlay on top of the profile photo */
-.transparent-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.0); /* Transparent */
-    border-radius: 50%;
-    z-index: 1;
-}
-
-/* Hide right-click menu */
-.transparent-overlay {
-    pointer-events: none;
-}
-
-/* Make sure footer sticks to the bottom */
-html {
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  }
+  
+  .social-links ul {
     display: flex;
-    flex-direction: column;
-    min-height: 100%;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    color: #00bfff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+  }
+  
+  .social-links a:hover {
+    color: #d63384;
+  }
+  
+  .cv-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d63384;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cv-button:hover {
+    background-color: #b30059;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 40px;
+  }
+  
+  .content-section {
+    display: none;
+  }
+  
+  .content-section.active {
+    display: block;
+  }
+  
+/* ----------- Collapsible Wrapper ----------- */
+.collapsible-wrapper {
+  max-width: 900px; /* ⇦ change cette valeur */
+  margin: 0 auto;   /* ⇦ pour centrer horizontalement */
+  padding: 10px;
 }
 
-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+/* ----------- Collapsible Wrapper ----------- */
+.collapsible-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px 10px;
 }
 
-main {
-    flex-grow: 1;
+/* ----------- Collapsible Button ----------- */
+.collapsible {
+  background-color: #3a3a3a;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 16px 22px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Table Styling for Co-supervision */
-.co-supervision-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 16px;
-    text-align: left;
+.collapsible:hover {
+  background-color: #505050;
 }
 
-.co-supervision-table th, .co-supervision-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-    word-wrap: break-word;
-    white-space: normal;
+.collapsible::after {
+  content: '\25B6'; /* ▶ icon */
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  font-size: 0.85rem;
+  color: #ccc;
 }
 
-.co-supervision-table th {
-    background-color: #f8f8f8;
-    font-weight: bold;
+.collapsible.active::after {
+  transform: translateY(-50%) rotate(90deg);
 }
 
-.co-supervision-table tr:nth-of-type(even) {
-    background-color: #f9f9f9;
+/* ----------- Collapsible Content ----------- */
+.content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #2f2f2f;
+  border-left: 3px solid #d63384;
+  border-radius: 0 0 8px 8px;
+  color: #ddd;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 24px;
+  text-align: left;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
-.co-supervision-table tr:hover {
-    background-color: #f1f1f1;
+.collapsible.active + .content {
+  padding: 20px 24px;
+  max-height: 1000px;
 }
 
-.co-supervision-table td {
-    vertical-align: middle;
+/* ----------- List Styling ----------- */
+.content ul {
+  padding-left: 24px;
+  list-style: disc;
 }
 
-/* Responsive Table Style for Mobile */
-@media (max-width: 768px) {
-    .co-supervision-table thead {
-        display: none; /* Hide table header on mobile */
-    }
+.content ul li {
+  margin: 12px 0;
+}
 
-    .co-supervision-table, .co-supervision-table tbody, .co-supervision-table tr, .co-supervision-table td {
-        display: block;
-        width: 100%;
-    }
+/* ----------- Table Styling ----------- */
+.table-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding: 10px;
+}
 
-    .co-supervision-table tr {
-        margin-bottom: 15px;
-    }
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2f2f2f;
+  color: #ddd;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
 
-    .co-supervision-table td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-    }
+.styled-table thead {
+  background-color: #3a3a3a;
+}
 
-    .co-supervision-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-weight: bold;
-        text-align: left;
-    }
+.styled-table thead th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+}
+
+.styled-table tbody td {
+  padding: 12px 16px;
+  border-top: 1px solid #444;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #2b2b2b;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #444;
 }
