@@ -3,11 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src https://sabrineamri-career-conversation.hf.space; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data: *;">
   <title>Research - Dr. Sabrine Amri</title>
   <link rel="stylesheet" href="./style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-aQe4R+XyLoRK1+j5u7KPfWD7f8Cl1wBDt9eN5akq8E3XjK6VnBlNl1pFNRaUQRY7sS2f5wT+oS6T7jqwdbZtsg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
 </head>
+<!-- Include Chat Widget -->
+<div id="chat-widget-container"></div>
+<script>
+  fetch('/chat-widget.html')  // Use absolute path with leading slash
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('chat-widget-container').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Error loading chat widget:', error);
+    });
+</script>
 <body>
     <nav>
         <ul class="navbar">

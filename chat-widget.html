@@ -1,0 +1,15 @@
+<!-- Floating Chat Button -->
+<div id="chat-button-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <button id="chat-toggle" onclick="document.getElementById('chat-modal').style.display = 'block'; this.style.display = 'none';" style="width: 60px; height: 60px; border-radius: 50%; background-color: #d63384; border: none; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+    <i class="fas fa-comment" style="color: white; font-size: 24px;"></i>
+  </button>
+</div>
+
+<!-- Chat Modal -->
+<div id="chat-modal" style="display: none; position: fixed; bottom: 90px; right: 20px; width: 350px; height: 500px; background: #2f2f2f; border-radius: 10px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); overflow: hidden;">
+  <div style="padding: 10px; background: #1e1e1e; display: flex; justify-content: space-between; align-items: center;">
+    <div style="color: white; font-weight: bold;">Chat with Dr. Sabrine's AI Assistant Agent</div>
+    <button id="close-chat" onclick="document.getElementById('chat-modal').style.display = 'none'; document.getElementById('chat-toggle').style.display = 'flex';" style="background: none; border: none; color: white; cursor: pointer; font-size: 20px;">×</button>
+  </div>
+  <iframe src="https://sabrineamri-career-conversation.hf.space" style="width: 100%; height: calc(100% - 40px); border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

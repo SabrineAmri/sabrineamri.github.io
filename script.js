@@ -37,6 +37,7 @@ document.addEventListener('contextmenu', function (e) {
   
     // Save language
     localStorage.setItem('preferredLanguage', selectedLanguage);
+    updateChatButtonText(selectedLanguage);
     initializeCollapsibles(); // re-initialize
   });
   
@@ -100,9 +101,36 @@ document.addEventListener('contextmenu', function (e) {
   }
   
 
-  //window.onload = loadPreferredLanguage;
-  window.onload = function () {
-    loadPreferredLanguage();
-    initializeCollapsibles(); // <== ici !
-  };
+// Initial language load + chat functionality
+window.onload = function() {
+  loadPreferredLanguage();
+  initializeCollapsibles();
+  
+  // Add this line to update chat button text on page load
+  const lang = localStorage.getItem('preferredLanguage') || 'en';
+  updateChatButtonText(lang);
+  
+  // Add listeners for chat toggle functionality
+  if (document.getElementById('chat-toggle')) {
+    document.getElementById('chat-toggle').addEventListener('click', function() {
+      document.getElementById('chat-modal').style.display = 'block';
+      this.style.display = 'none';
+    });
+  }
+  
+  if (document.getElementById('close-chat')) {
+    document.getElementById('close-chat').addEventListener('click', function() {
+      document.getElementById('chat-modal').style.display = 'none';
+      document.getElementById('chat-toggle').style.display = 'flex';
+    });
+  }
+};
+
+// Function to update chat button text based on language
+function updateChatButtonText(language) {
+  const chatHeader = document.querySelector('#chat-modal div div');
+  if (chatHeader) {
+    chatHeader.textContent = language === 'fr' ? 'Discutez avec Dr. Sabrine' : 'Chat with Dr. Sabrine';
+  }
+}
   

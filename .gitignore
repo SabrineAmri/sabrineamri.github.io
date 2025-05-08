@@ -1,2 +1,18 @@
+# Old versions
 old_versions/
 Website V0/
+
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.env
+
+# Editor files
+.vscode/
+.idea/
+
+# Temporary files
+.DS_Store
